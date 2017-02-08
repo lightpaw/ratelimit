@@ -89,7 +89,7 @@ func NewBucketWithQuantum(fillInterval time.Duration, capacity, quantum int64) *
 		panic("token bucket quantum is not > 0")
 	}
 	return &Bucket{
-		startTime:    time.Now(),
+		startTime:    time.Now().Add(-2 * time.Second),
 		capacity:     capacity,
 		quantum:      quantum,
 		avail:        capacity,
